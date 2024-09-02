@@ -8,8 +8,8 @@ const Content = () => {
 
     const isFavorite = (name) => { //Verificamos si el nombre del item ya está en favoritos.
         //El método .some() verifica si algún item coincide con el nombre proporcionado, si es así devuelve true.
-            return store.favorites.some(item => item.name === name);
-        };
+        return store.favorites.some(item => item.name === name);
+    };
     const handleToggleFavorites = (name) => { //Función para agregar y eliminar item por su NAME(con el uid hay conflictos).
         if (isFavorite(name)) { //Verificamos si ya está el item, si es true se elimina, si es false lo agregamos.
             actions.deleteFavorites(name); //función para eliminar
@@ -36,7 +36,7 @@ const Content = () => {
                                         <Link to={`/details/people/${person.uid}`}> {/*Nos lleva a los detalles de cada item por su id y categoria: people, planets, starships*/}
                                             <i className="fa-regular fa-circle-question"></i>
                                         </Link>
-                                        <i 
+                                        <i
                                             className={`fa-regular fa-star ${isFavorite(person.name) ? "favo" : ""}`}
                                             onClick={() => handleToggleFavorites(person.name)}></i> {/*name unico de cada elemento*/}
                                     </div>
@@ -62,7 +62,7 @@ const Content = () => {
                                         <Link to={`/details/planets/${planet.uid}`}>
                                             <i className="fa-regular fa-circle-question"></i>
                                         </Link>
-                                        <i 
+                                        <i
                                             className={`fa-regular fa-star ${isFavorite(planet.name) ? "favo" : ""}`}
                                             onClick={() => handleToggleFavorites(planet.name)}></i>
                                     </div>
@@ -88,8 +88,8 @@ const Content = () => {
                                         <Link to={`/details/starships/${starship.uid}`}>
                                             <i className="fa-regular fa-circle-question"></i>
                                         </Link>
-                                        <i 
-                                            className={`fa-regular fa-star ${isFavorite(starship.name) ? "favorite" : ""}`} 
+                                        <i
+                                            className={`fa-regular fa-star ${isFavorite(starship.name) ? "favo" : ""}`}
                                             onClick={() => handleToggleFavorites(starship.name)}></i>
 
                                     </div>
